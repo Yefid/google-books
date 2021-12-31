@@ -22,9 +22,7 @@ export default function Welcome() {
 		const username = data.get('username');
 		if (username) {
 			sessionStorage['username'] = username;
-			console.log({
-				username,
-			});
+	
 			navigate('/');
 		} else {
 			alert('Please Enter Username');

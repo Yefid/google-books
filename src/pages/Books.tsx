@@ -25,10 +25,8 @@ export default function Books() {
 		value: number
 	) => {
 		const startValue = 1 + (value - 1) * 20;
-		console.log(startValue);
 		try {
 			const results = await getBooks(searchInput, 20, startValue);
-			console.log(results.data.totalItems);
 			setNumberOfPages(Math.floor(results.data.totalItems / 20));
 			setPage(value);
 			setStartNumber(startValue);
@@ -39,16 +37,13 @@ export default function Books() {
 	};
 
 	const handleSearch = async () => {
-		console.log(searchInput);
 		const results = await getBooks(searchInput, 20, 1);
-		console.log(results.data.totalItems);
 		setNumberOfPages(Math.floor(results.data.totalItems / 20));
 		setBooks(results.data.items);
 	};
 	const showMoreInfo = async (item: any) => {
 		setSelectedItem(item);
 		handleClickOpen();
-		console.log(item);
 	};
 	const handleClickOpen = () => {
 		setOpen(true);

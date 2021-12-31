@@ -16,7 +16,6 @@ export default function Bar() {
 	const [value, setValue] = useState(0);
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
 		setValue(newValue);
-		console.log(newValue);
 		switch (newValue) {
 			case 0:
 				navigate('/books');
